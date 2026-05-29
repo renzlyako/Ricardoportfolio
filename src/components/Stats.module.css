@@ -1,0 +1,40 @@
+.section {
+  background: var(--color-red);
+  padding: 60px 5vw;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.item {
+  text-align: center;
+}
+
+.value {
+  display: block;
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 48px);
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

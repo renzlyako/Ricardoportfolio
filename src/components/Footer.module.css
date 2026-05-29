@@ -1,0 +1,54 @@
+.footer {
+  background: #1e2123;
+  padding: 40px 5vw;
+  border-top: 1px solid rgba(246, 247, 235, 0.05);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--color-cream);
+}
+
+.logoAccent {
+  color: var(--color-red);
+}
+
+.copy {
+  font-size: 13px;
+  color: rgba(246, 247, 235, 0.3);
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  font-size: 13px;
+  color: rgba(246, 247, 235, 0.4);
+  cursor: pointer;
+  transition: color var(--transition-base);
+}
+
+.link:hover {
+  color: var(--color-red);
+}
+
+@media (max-width: 600px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

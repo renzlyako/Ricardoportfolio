@@ -1,0 +1,126 @@
+.section {
+  background: var(--color-dark);
+  padding: 100px 5vw;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Left ── */
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-red);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.heading {
+  font-weight: 800;
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: var(--color-cream);
+  margin: 0 0 24px;
+  letter-spacing: -1px;
+}
+
+.body {
+  font-size: 16px;
+  color: rgba(246, 247, 235, 0.68);
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-cream);
+  background: rgba(246, 247, 235, 0.08);
+  border: 1px solid rgba(246, 247, 235, 0.12);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  letter-spacing: 0.2px;
+}
+
+/* ── Right ── */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.barItem {}
+
+.barHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.barLabel {
+  font-size: 14px;
+  color: var(--color-cream);
+  font-weight: 500;
+}
+
+.barPct {
+  font-size: 14px;
+  color: var(--color-red);
+  font-weight: 700;
+}
+
+.barTrack {
+  height: 6px;
+  background: rgba(246, 247, 235, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-red), #ff7b67);
+  border-radius: 3px;
+}
+
+.quote {
+  margin-top: 40px;
+  background: rgba(246, 247, 235, 0.05);
+  border: 1px solid rgba(246, 247, 235, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.quoteText {
+  font-size: 15px;
+  color: rgba(246, 247, 235, 0.8);
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.quoteAuthor {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-red);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
