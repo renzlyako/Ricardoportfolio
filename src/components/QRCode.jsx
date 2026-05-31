@@ -1,9 +1,6 @@
-import { QrCode } from 'lucide-react'
 import { useInView } from '../hooks/useInView.js'
 import styles from './QRCode.module.css'
-
-// Swap this import when real QR image is ready
-// import qrImage from '../assets/qr-code.jpg'
+import qrImage from '../assets/qr-code.svg'
 
 export default function QRCode() {
   const [ref, visible] = useInView()
@@ -33,10 +30,10 @@ export default function QRCode() {
 
           <div className={styles.features}>
             {[
-              { icon: 'ti-list-check', label: 'Browse all available services'       },
-              { icon: 'ti-file-text',  label: 'View detailed service descriptions'  },
-              { icon: 'ti-forms',      label: 'Fill up the form to get started'     },
-              { icon: 'ti-clock',      label: 'Available anytime, anywhere'         },
+              { icon: 'ti-list-check', label: 'Browse all available services'      },
+              { icon: 'ti-file-text',  label: 'View detailed service descriptions' },
+              { icon: 'ti-forms',      label: 'Fill up the form to get started'    },
+              { icon: 'ti-clock',      label: 'Available anytime, anywhere'        },
             ].map(({ icon, label }) => (
               <div key={label} className={styles.featureRow}>
                 <div className={styles.featureIcon}>
@@ -72,24 +69,11 @@ export default function QRCode() {
 
             {/* QR image */}
             <div className={styles.qrImgWrap}>
-
-              {/* ── Placeholder — remove when real QR is ready ── */}
-              <div className={styles.qrPlaceholder}>
-                <QrCode size={120} className={styles.qrPlaceholderIcon} />
-                <p className={styles.qrPlaceholderText}>QR Code Coming Soon</p>
-                <p className={styles.qrPlaceholderSub}>
-                  Drop your QR image in<br />
-                  <code>src/assets/qr-code.jpg</code>
-                </p>
-              </div>
-
-              {/* ── Real QR — uncomment when ready ──
               <img
                 src={qrImage}
                 alt="Scan to view services on Google Docs"
                 className={styles.qrImg}
               />
-              */}
             </div>
 
             {/* Footer instruction */}

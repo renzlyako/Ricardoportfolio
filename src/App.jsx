@@ -5,9 +5,9 @@ import Services     from './components/Services.jsx'
 import Credentials  from './components/Credentials.jsx'
 import About        from './components/About.jsx'
 import Testimonials from './components/Testimonials.jsx'
-import SocialMedia   from './components/SocialMedia.jsx'
-import QrCode       from './components/QrCode.jsx'
+import SocialMedia  from './components/SocialMedia.jsx'
 import Contact      from './components/Contact.jsx'
+import QRCode       from './components/QRCode.jsx'
 import Footer       from './components/Footer.jsx'
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
       <Testimonials />
       <SocialMedia />
       <Contact />
-      <QrCode />  
+      <QRCode />
       <Footer />
     </>
   )
