@@ -1,0 +1,258 @@
+.section {
+  background: var(--color-dark);
+  padding: 100px 5vw;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Left ── */
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-red);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.heading {
+  font-weight: 800;
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: var(--color-cream);
+  margin: 0 0 20px;
+  letter-spacing: -1px;
+}
+
+.subtext {
+  font-size: 16px;
+  color: rgba(246, 247, 235, 0.65);
+  line-height: 1.8;
+  margin: 0 0 36px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.featureRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.featureIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(233, 79, 55, 0.12);
+  color: var(--color-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.featureLabel {
+  font-size: 15px;
+  color: rgba(246, 247, 235, 0.8);
+  font-weight: 500;
+}
+
+/* ── Right — QR card ── */
+.right {
+  display: flex;
+  justify-content: center;
+}
+
+.qrCard {
+  background: rgba(246, 247, 235, 0.05);
+  border: 1px solid rgba(246, 247, 235, 0.12);
+  border-radius: 24px;
+  padding: 32px;
+  width: 100%;
+  max-width: 360px;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.qrCard:hover {
+  border-color: rgba(233, 79, 55, 0.4);
+}
+
+/* ── Card header ── */
+.qrCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(246, 247, 235, 0.08);
+}
+
+.qrCardIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(233, 79, 55, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qrCardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-cream);
+  margin: 0 0 2px;
+}
+
+.qrCardSub {
+  font-size: 12px;
+  color: rgba(246, 247, 235, 0.45);
+  margin: 0;
+}
+
+/* ── QR image wrap ── */
+.qrImgWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.qrImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Placeholder styles */
+.qrPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  background: #fff;
+}
+
+.qrPlaceholderIcon {
+  color: var(--color-dark);
+  opacity: 0.25;
+}
+
+.qrPlaceholderText {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(57, 62, 65, 0.5);
+  margin: 0;
+}
+
+.qrPlaceholderSub {
+  font-size: 12px;
+  color: rgba(57, 62, 65, 0.4);
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.qrPlaceholderSub code {
+  font-size: 11px;
+  background: rgba(57, 62, 65, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--color-red);
+}
+
+/* ── Footer ── */
+.qrFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qrFooterText {
+  font-size: 13px;
+  color: rgba(246, 247, 235, 0.5);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Animated corner accents ── */
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--color-red);
+  border-style: solid;
+  opacity: 0;
+  animation: cornerFade 3s ease-in-out infinite;
+}
+
+.qrCard:hover .corner {
+  opacity: 1;
+}
+
+.cornerTL {
+  top: 12px;
+  left: 12px;
+  border-width: 2px 0 0 2px;
+  border-radius: 4px 0 0 0;
+}
+
+.cornerTR {
+  top: 12px;
+  right: 12px;
+  border-width: 2px 2px 0 0;
+  border-radius: 0 4px 0 0;
+  animation-delay: 0.2s;
+}
+
+.cornerBL {
+  bottom: 12px;
+  left: 12px;
+  border-width: 0 0 2px 2px;
+  border-radius: 0 0 0 4px;
+  animation-delay: 0.4s;
+}
+
+.cornerBR {
+  bottom: 12px;
+  right: 12px;
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 4px 0;
+  animation-delay: 0.6s;
+}
+
+@keyframes cornerFade {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .right {
+    justify-content: center;
+  }
+}

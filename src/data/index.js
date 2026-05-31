@@ -9,23 +9,24 @@ export const stats = [
 
 export const services = [
   {
-    iconName: 'Home',
-    title: 'Real Estate Assistant',
-    desc: 'Supporting real estate professionals with listings, client follow-ups, and transaction coordination so deals close faster.',
+    iconName:  'Home',
+    title:     'Real Estate Marketing',
+    featured:  false,
+    desc:      'Supporting real estate professionals with marketing campaigns, client follow-ups, and lead generation, as a dedicated marketing manager, not a broker.',
     details: [
-      'MLS listing creation & updates',
+      'Real estate marketing campaign management',
       'Buyer & seller lead follow-up',
-      'Transaction & escrow coordination',
+      'Social media promotion for listings',
       'Appointment scheduling for showings',
       'CRM management & database cleanup',
       'Market research & comparable reports',
     ],
-    rate: 'Starting at $18/hr',
   },
   {
-    iconName: 'Tag',
-    title: 'Product Affiliates',
-    desc: 'Managing your affiliate partnerships, tracking commissions, and creating content that converts browsers into buyers.',
+    iconName:  'Tag',
+    title:     'Product Affiliates',
+    featured:  false,
+    desc:      'Managing your affiliate partnerships, tracking commissions, and creating content that converts browsers into buyers.',
     details: [
       'Affiliate program setup & management',
       'Partner outreach & onboarding',
@@ -37,11 +38,12 @@ export const services = [
     rate: 'Starting at $16/hr',
   },
   {
-    iconName: 'Shield',
-    title: 'Insurance',
-    desc: 'Administrative support for insurance professionals — from policy management to client communication and claims follow-up.',
+    iconName:  'Shield',
+    title:     'Insurance',
+    featured:  true,
+    desc:      'His core specialty, providing expert administrative and marketing support for insurance professionals, from policy management to client acquisition.',
     details: [
-      'Policy data entry & management',
+      'Insurance product promotion & marketing',
       'Client onboarding & documentation',
       'Renewal reminders & follow-ups',
       'Claims status tracking & updates',
@@ -51,9 +53,10 @@ export const services = [
     rate: 'Starting at $17/hr',
   },
   {
-    iconName: 'CalendarDays',
-    title: 'Hosting Event',
-    desc: 'End-to-end virtual and in-person event coordination — from invitations and RSVPs to post-event wrap-up and feedback.',
+    iconName:  'CalendarDays',
+    title:     'Hosting Event',
+    featured:  false,
+    desc:      'End-to-end virtual and in-person event coordination, from invitations and RSVPs to post-event wrap-up and feedback.',
     details: [
       'Event planning & timeline creation',
       'Vendor sourcing & coordination',
@@ -65,9 +68,10 @@ export const services = [
     rate: 'Starting at $20/hr',
   },
   {
-    iconName: 'Laptop',
-    title: 'Virtual Assistant',
-    desc: 'General executive VA support covering inbox, calendar, research, and day-to-day admin so you can focus on growth.',
+    iconName:  'Laptop',
+    title:     'Virtual Assistant',
+    featured:  false,
+    desc:      'General executive VA support covering inbox, calendar, research, and day-to-day admin so you can focus on growth.',
     details: [
       'Email & calendar management',
       'Travel booking & itinerary planning',
@@ -78,33 +82,34 @@ export const services = [
     ],
     rate: 'Starting at $15/hr',
   },
-  {
-    iconName: 'TrendingUp',
-    title: 'Financial Advisors',
-    desc: 'Dedicated admin support for financial advisors — managing client records, compliance docs, and meeting preparation.',
+{
+    iconName:  'Monitor',
+    title:     'Web Systems & Development',
+    featured:  false,
+    desc:      'Building custom websites and web systems tailored to your business needs, from landing pages to full web applications.',
     details: [
-      'Client onboarding documentation',
-      'Meeting prep & agenda creation',
-      'Portfolio summary formatting',
-      'Compliance document organization',
-      'Appointment scheduling & reminders',
-      'CRM data entry & maintenance',
+      'Custom website design & development',
+      'Web system architecture & build',
+      'Landing page creation',
+      'Website maintenance & updates',
+      'Performance optimization',
+      'Business web application development',
     ],
-    rate: 'Starting at $20/hr',
+    rate: 'Starting at $25/hr',
   },
 ]
 
 export const skillTags = [
-  'Real Estate', 'Product Affiliates', 'Insurance',
-  'Event Hosting', 'Virtual Assistance', 'Financial Admin',
+  'Real Estate Marketing', 'Insurance', 'Product Affiliates',
+  'Event Hosting', 'Virtual Assistance', 'Web Promotion',
   'CRM Systems', 'Data Entry', 'Client Onboarding', 'Calendar Management',
 ]
 
 export const skillBars = [
-  { label: 'Virtual Assistance',   pct: 95 },
-  { label: 'Real Estate Support',  pct: 90 },
-  { label: 'Event Coordination',   pct: 85 },
-  { label: 'Financial Admin',      pct: 88 },
+  { label: 'Insurance Support',      pct: 95 },
+  { label: 'Real Estate Marketing',  pct: 90 },
+  { label: 'Event Coordination',     pct: 85 },
+  { label: 'Web Promotion',          pct: 88 },
 ]
 
 export const testimonials = [
@@ -123,15 +128,15 @@ export const testimonials = [
   {
     name:   'Priya M.',
     role:   'Operations Director, FlowCo',
-    text:   'The quality of work is outstanding — meticulous, fast, and always professional. I recommend her to every founder I know.',
+    text:   'The quality of work is outstanding, meticulous, fast, and always professional. I recommend her to every founder I know.',
     rating: 5,
   },
 ]
 
 export const contactInfo = [
-  { iconName: 'Mail',   label: 'Email',            value: 'alex@vaportfolio.com' },
-  { iconName: 'Phone',  label: 'Phone / WhatsApp',  value: '+1 (555) 012-3456' },
-  { iconName: 'MapPin', label: 'Location',          value: 'Remote — Worldwide' },
+  { iconName: 'Mail',   label: 'Email',           value: 'alex@vaportfolio.com' },
+  { iconName: 'Phone',  label: 'Phone / WhatsApp', value: '+1 (555) 012-3456' },
+  { iconName: 'MapPin', label: 'Location',         value: 'Remote — Worldwide' },
 ]
 
 export const tools = ['Notion', 'Asana', 'Slack', 'HubSpot', 'Zapier']

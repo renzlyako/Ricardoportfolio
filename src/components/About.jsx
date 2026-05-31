@@ -71,7 +71,7 @@ export default function About() {
               "My goal is simple: make your life easier. Every task I take on
               is one less thing on your plate."
             </p>
-            <div className={styles.quoteAuthor}>— Alex Reyes</div>
+            <div className={styles.quoteAuthor}>— Airick Roque</div>
           </div>
         </div>
       </div>

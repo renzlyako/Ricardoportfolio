@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className={styles.inner}>
         {/* Logo */}
         <div className={`${styles.logo} ${scrolled ? styles.logoScrolled : ''}`}>
-          <span className={styles.logoAccent}>VA</span>Portfolio
+          <span className={styles.logoAccent}>Meet</span>Airick
         </div>
 
         {/* Desktop links */}

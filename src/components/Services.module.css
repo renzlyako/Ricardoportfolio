@@ -9,7 +9,6 @@
   margin: 0 auto;
 }
 
-/* ── Header ── */
 .header {
   text-align: center;
   margin-bottom: 64px;
@@ -32,14 +31,13 @@
   letter-spacing: -1px;
 }
 
-/* ── Grid ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-/* ── Card ── */
+/* ── Regular card ── */
 .card {
   background: #fff;
   border-radius: var(--radius-lg);
@@ -48,7 +46,9 @@
   cursor: default;
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  position: relative;
+  overflow: visible;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
@@ -61,6 +61,86 @@
   color: #fff;
 }
 
+/* ── Featured card ── */
+.cardFeatured {
+  border: 2px solid var(--color-red);
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(233, 79, 55, 0.15);
+}
+
+.cardFeatured:hover {
+  box-shadow: 0 20px 50px rgba(233, 79, 55, 0.3);
+  transform: translateY(-8px);
+}
+
+.cardFeatured::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    #e94f37,
+    #ff8a75,
+    #e94f37,
+    #ff8a75
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease infinite;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.cardFeatured::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 20px;
+  border: 2px solid rgba(233, 79, 55, 0.3);
+  animation: pulseRing 2s ease-out infinite;
+  z-index: -2;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseRing {
+  0%   { inset: -4px;  opacity: 0.6; }
+  100% { inset: -16px; opacity: 0; }
+}
+
+/* ── Featured badge ── */
+.featuredBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 100px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(233, 79, 55, 0.5);
+  animation: badgeBounce 2.5s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes badgeBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0px); }
+  50%       { transform: translateX(-50%) translateY(-4px); }
+}
+
+/* ── Icon ── */
 .iconWrap {
   width: 56px;
   height: 56px;
@@ -71,8 +151,19 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  transition: background var(--transition-base), color var(--transition-base);
+  transition: background 0.2s, color 0.2s;
   flex-shrink: 0;
+}
+
+.iconWrapFeatured {
+  background: var(--color-red);
+  color: #fff;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(233, 79, 55, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(233, 79, 55, 0); }
 }
 
 .cardTitle {
@@ -91,6 +182,7 @@
   flex: 1;
 }
 
+/* ── Learn More button ── */
 .learnBtn {
   display: inline-flex;
   align-items: center;
@@ -105,12 +197,21 @@
   font-weight: 600;
   cursor: pointer;
   width: fit-content;
-  transition: background var(--transition-base), color var(--transition-base);
+  transition: background 0.2s, color 0.2s;
 }
 
 .learnBtn:hover {
   background: var(--color-red);
   color: #fff;
+}
+
+.learnBtnFeatured {
+  background: var(--color-red);
+  color: #fff;
+}
+
+.learnBtnFeatured:hover {
+  opacity: 0.88;
 }
 
 /* ── Modal overlay ── */
@@ -132,7 +233,6 @@
   to   { opacity: 1; }
 }
 
-/* ── Modal box ── */
 .modal {
   background: #fff;
   border-radius: 24px;
@@ -148,9 +248,10 @@
   to   { opacity: 1; transform: none; }
 }
 
+/* ── Modal header — centered ── */
 .modalHeader {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
   margin-bottom: 16px;
 }
@@ -167,23 +268,41 @@
   flex-shrink: 0;
 }
 
+.modalIconFeatured {
+  background: var(--color-red);
+  color: #fff;
+}
+
 .modalTitleGroup {
   flex: 1;
+}
+
+.modalTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .modalTitle {
   font-weight: 800;
   font-size: 20px;
   color: var(--color-dark);
-  margin: 0 0 4px;
+  margin: 0;
   letter-spacing: -0.4px;
 }
 
-.modalRate {
-  font-size: 13px;
-  font-weight: 600;
+.modalFeaturedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(233, 79, 55, 0.1);
   color: var(--color-red);
-  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
 }
 
 .closeBtn {
@@ -198,7 +317,7 @@
   color: var(--color-dark);
   cursor: pointer;
   flex-shrink: 0;
-  transition: background var(--transition-base);
+  transition: background 0.2s;
 }
 
 .closeBtn:hover {
@@ -265,7 +384,7 @@
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .modalCta:hover {
@@ -273,7 +392,6 @@
   box-shadow: 0 8px 24px rgba(233, 79, 55, 0.4);
 }
 
-/* ── Responsive ── */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr 1fr;

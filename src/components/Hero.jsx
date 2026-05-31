@@ -43,21 +43,22 @@ export default function Hero() {
           <h1 className={styles.heading}>
             Your Next<br />
             <span className={styles.headingAccent}>
-              Virtual Assistant
+              Financial Advisor
               <span className={styles.headingUnderline} />
             </span>
             <br />Is Here.
           </h1>
 
           <p className={styles.subtext}>
-            I help busy founders and executives reclaim their time — handling
-            the admin, the coordination, and the details so you can stay in
-            your zone of genius.
+            I help individuals and families achieve financial security through personalized
+            insurance and financial planning solutions. Whether you're protecting your income,
+            growing your savings, or planning for your family's future, 
+            I'm here to guide you every step of the way.
           </p>
 
           <div className={styles.ctas}>
             <button className={styles.btnPrimary} onClick={() => scrollTo('contact')}>
-              Book a Free Discovery Call <ArrowRight size={16} />
+              Book for Free Financial Consultation <ArrowRight size={16} />
             </button>
             <button className={styles.btnSecondary} onClick={() => scrollTo('services')}>
               View Services
@@ -108,8 +109,8 @@ export default function Hero() {
 
             {/* Name label */}
             <div className={styles.carouselLabel}>
-              <h3 className={styles.carouselName}>Alex Reyes</h3>
-              <p className={styles.carouselRole}>Executive Virtual Assistant</p>
+              <h3 className={styles.carouselName}>Airick Roque</h3>
+              <p className={styles.carouselRole}>Financial Advisor Assistant</p>
               <div className={styles.carouselStars}>
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={14} fill="var(--color-red)" color="var(--color-red)" />
