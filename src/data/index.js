@@ -114,27 +114,27 @@ export const skillBars = [
 
 export const testimonials = [
   {
-    name:   'Sarah K.',
-    role:   'CEO, BrightPath Agency',
-    text:   'Hiring her was the single best decision I made this year. My calendar has never been cleaner and I finally have headspace to grow the business.',
+    name:   'Mark D.',
+    role:   'Software Engineer',
+    text:   'Sobrang game-changer nung kumuha ako ng insurance kay Kuya Airick! Dati, na-ooverwhelm talaga ako sa mga financial terms, pero ipinaliwanag nya lahat sa pinakasimpleng paraan. True to his word, less stress talaga working with him. Highly recommended!',
     rating: 5,
   },
   {
-    name:   'Marcus L.',
-    role:   'Founder, NovaTech SaaS',
-    text:   'Incredibly proactive. She anticipates needs before I even voice them. Our customer response time dropped by 60% in the first month.',
+    name:   'Camille R.',
+    role:   'Freelance Graphic Designer',
+    text:   'Grabe yung peace of mind nung naging advisor ko si Kuya Airick. Hindi sya yung tipikal na ahente na pushy magbenta. He really listens to your goals and guides you para maprotektahan yung future mo at ng family mo. Siya talaga ang perfect Kuya Future!',
     rating: 5,
   },
   {
-    name:   'Priya M.',
-    role:   'Operations Director, FlowCo',
-    text:   'The quality of work is outstanding, meticulous, fast, and always professional. I recommend her to every founder I know.',
+    name:   'Sofia M.',
+    role:   'Digital Marketer',
+    text:   'I took a free consultation with Kuya Airick and it was the best decision ever. Ang galing nya mag-balance ng talk about insurance and financial security while keeping it very modern and adaptable sa digital world. Super worth it!',
     rating: 5,
   },
 ]
 
 export const contactInfo = [
-  { iconName: 'Mail',   label: 'Email',           value: 'alex@vaportfolio.com' },
+  { iconName: 'Mail',   label: 'Email',           value: 'airick.roque@gmail.com' },
   { iconName: 'Phone',  label: 'Phone / WhatsApp', value: '+1 (555) 012-3456' },
   { iconName: 'MapPin', label: 'Location',         value: 'Remote — Worldwide' },
 ]

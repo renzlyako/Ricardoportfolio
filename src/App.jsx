@@ -4,6 +4,7 @@ import Stats        from './components/Stats.jsx'
 import Services     from './components/Services.jsx'
 import Credentials  from './components/Credentials.jsx'
 import About        from './components/About.jsx'
+import Gallery      from './components/Gallery.jsx'
 import Testimonials from './components/Testimonials.jsx'
 import SocialMedia  from './components/SocialMedia.jsx'
 import Contact      from './components/Contact.jsx'
@@ -19,6 +20,7 @@ export default function App() {
       <Services />
       <Credentials />
       <About />
+      <Gallery /> 
       <Testimonials />
       <SocialMedia />
       <Contact />

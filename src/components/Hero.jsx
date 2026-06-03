@@ -1,29 +1,17 @@
 import { useState, useEffect } from 'react'
-import { ArrowRight, CheckCircle, ChevronDown, Star } from 'lucide-react'
+import { ArrowRight, ChevronDown, Star, Shield } from 'lucide-react'
 import { tools } from '../data/index.js'
-import img1 from '../assets/image1.jpg'
 import img2 from '../assets/image2.jpg'
-import img3 from '../assets/image3.jpg'
 import styles from './Hero.module.css'
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
-const slides = [img1, img2, img3]
-
 export default function Hero() {
   const [loaded, setLoaded] = useState(false)
-  const [active, setActive] = useState(0)
 
   useEffect(() => { setTimeout(() => setLoaded(true), 80) }, [])
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length)
-    }, 2800)
-    return () => clearInterval(timer)
-  }, [])
 
   return (
     <section className={styles.section}>
@@ -41,19 +29,24 @@ export default function Hero() {
           </div>
 
           <h1 className={styles.heading}>
-            Your Next<br />
-            <span className={styles.headingAccent}>
-              Financial Advisor
-              <span className={styles.headingUnderline} />
+            Hey! I'm{' '}
+            <span className={styles.highlightName}>
+              AIRICK
+              <span className={styles.highlightNameUnderline} />
             </span>
-            <br />Is Here.
+            ,<br />
+            your{' '}
+            <span className={styles.highlightKuya}>
+              Kuya Future
+              <span className={styles.highlightKuyaUnderline} />
+            </span>
+            .
           </h1>
 
+          <p className={styles.tagline}>Less stress, more success.</p>
+
           <p className={styles.subtext}>
-            I help individuals and families achieve financial security through personalized
-            insurance and financial planning solutions. Whether you're protecting your income,
-            growing your savings, or planning for your family's future, 
-            I'm here to guide you every step of the way.
+            Let's secure your future while building the life you love today.
           </p>
 
           <div className={styles.ctas}>
@@ -72,63 +65,63 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Right — Auto-Focus Cycle ── */}
+        {/* ── Right — Single image with floating service tags ── */}
         <div className={styles.right}>
-          <div className={styles.carouselWrap}>
+          <div className={styles.imageWrap}>
 
-            {/* Image trio */}
-            <div className={styles.imageRow}>
-              {slides.map((src, i) => (
-                <div
-                  key={i}
-                  className={`${styles.imgFrame} ${active === i ? styles.imgFrameActive : styles.imgFrameIdle}`}
-                  onClick={() => setActive(i)}
-                >
-                  <img
-                    src={src}
-                    alt={`Alex Reyes photo ${i + 1}`}
-                    className={styles.slideImg}
-                  />
-                  {/* Active indicator dot */}
-                  {active === i && <span className={styles.activeDot} />}
-                </div>
-              ))}
+            {/* Main image */}
+            <div className={styles.imgFrame}>
+              <img src={img2} alt="Airick Roque" className={styles.mainImg} />
+              <div className={styles.imgOverlay} />
             </div>
 
-            {/* Dot indicators */}
-            <div className={styles.dots}>
-              {slides.map((_, i) => (
-                <button
-                  key={i}
-                  className={`${styles.dot} ${active === i ? styles.dotActive : ''}`}
-                  onClick={() => setActive(i)}
-                  aria-label={`View photo ${i + 1}`}
-                />
-              ))}
+            {/* ── Floating service tags ── */}
+
+            {/* Insurance — HIGHLIGHTED (top left) */}
+            <div className={`${styles.serviceTag} ${styles.tagInsurance} ${styles.tagFeatured}`}>
+              <Shield size={13} />
+              <span>Insurance</span>
+              <span className={styles.starBadge}>★ Specialty</span>
             </div>
 
-            {/* Name label */}
-            <div className={styles.carouselLabel}>
-              <h3 className={styles.carouselName}>Airick Roque</h3>
-              <p className={styles.carouselRole}>Financial Advisor Assistant</p>
-              <div className={styles.carouselStars}>
+            {/* Real Estate (top right) */}
+            <div className={`${styles.serviceTag} ${styles.tagRealEstate}`}>
+              <i className="ti ti-home" aria-hidden="true" style={{ fontSize: 13 }} />
+              <span>Real Estate</span>
+            </div>
+
+            {/* Product Affiliates (right middle) */}
+            <div className={`${styles.serviceTag} ${styles.tagAffiliates}`}>
+              <i className="ti ti-tag" aria-hidden="true" style={{ fontSize: 13 }} />
+              <span>Product Affiliates</span>
+            </div>
+
+            {/* Hosting Event (bottom right) */}
+            <div className={`${styles.serviceTag} ${styles.tagHosting}`}>
+              <i className="ti ti-calendar-event" aria-hidden="true" style={{ fontSize: 13 }} />
+              <span>Hosting Event</span>
+            </div>
+
+            {/* Virtual Assistant (bottom left) */}
+            <div className={`${styles.serviceTag} ${styles.tagVA}`}>
+              <i className="ti ti-device-laptop" aria-hidden="true" style={{ fontSize: 13 }} />
+              <span>Virtual Assistant</span>
+            </div>
+
+            {/* Web Systems (left middle) */}
+            <div className={`${styles.serviceTag} ${styles.tagWeb}`}>
+              <i className="ti ti-monitor" aria-hidden="true" style={{ fontSize: 13 }} />
+              <span>Web Systems</span>
+            </div>
+
+            {/* Name label below image */}
+            <div className={styles.imgLabel}>
+              <h3 className={styles.imgName}>Airick Roque</h3>
+              <p className={styles.imgRole}>Financial Advisor Assistant</p>
+              <div className={styles.imgStars}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} fill="var(--color-red)" color="var(--color-red)" />
+                  <Star key={i} size={13} fill="var(--color-red)" color="var(--color-red)" />
                 ))}
-              </div>
-            </div>
-
-            {/* Floating badges */}
-            <div className={styles.badgeTopRight}>
-              <div className={styles.badgeStat}>98%</div>
-              <div className={styles.badgeStatLabel}>Satisfaction</div>
-            </div>
-
-            <div className={styles.badgeBottomLeft}>
-              <CheckCircle size={18} className={styles.badgeCheckIcon} />
-              <div>
-                <div className={styles.badgeProjectCount}>120+ Projects</div>
-                <div className={styles.badgeProjectLabel}>Successfully Delivered</div>
               </div>
             </div>
 
