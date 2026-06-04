@@ -140,5 +140,3 @@ export const contactInfo = [
 ]
 
 export const tools = ['Notion', 'Asana', 'Slack', 'HubSpot', 'Zapier']
-
-export const footerLinks = ['Privacy', 'Terms', 'LinkedIn']
