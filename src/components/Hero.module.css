@@ -325,9 +325,10 @@
   color: #fff !important;
   border-color: var(--color-red) !important;
   box-shadow: 0 8px 24px rgba(233, 79, 55, 0.4) !important;
-  font-size: 15px !important;
-  padding: 13px 22px !important;
-  animation: floatTagCenter 3s ease-in-out infinite, featuredPulse 2s ease-in-out infinite !important;
+  font-size: 20px !important;
+  padding: 15px 24px !important;
+  gap: 10px !important;
+  animation: floatTag1 3s ease-in-out infinite, featuredPulse 2s ease-in-out infinite !important;
 }
 
 .starBadge {
@@ -340,12 +341,12 @@
 }
 
 /* Positions */
-.tagInsurance   { top: -18px;  left: 50%; transform: translateX(-50%); }
-.tagRealEstate  { top: 60px;   right: -20px; animation: floatTag2 3.5s ease-in-out infinite; }
-.tagAffiliates  { top: 180px;  right: -30px; animation: floatTag3 4s ease-in-out infinite; }
+.tagInsurance   { top: 160px;    left: -30px;  animation: floatTag1 3s ease-in-out infinite, featuredPulse 2s ease-in-out infinite; }
+.tagRealEstate  { top: 60px;     right: -20px; animation: floatTag2 3.5s ease-in-out infinite; }
+.tagAffiliates  { top: 180px;    right: -30px; animation: floatTag3 4s ease-in-out infinite; }
 .tagHosting     { bottom: 120px; right: -20px; animation: floatTag2 3.2s ease-in-out infinite 0.5s; }
-.tagVA          { bottom: 60px;  left: -20px; animation: floatTag3 3.8s ease-in-out infinite 0.3s; }
-.tagWeb         { top: 160px;   left: -30px; animation: floatTag1 4.2s ease-in-out infinite 0.8s; }
+.tagVA          { bottom: 60px;  left: -20px;  animation: floatTag3 3.8s ease-in-out infinite 0.3s; }
+.tagWeb         { top: -18px;    left: 50%;    animation: floatTagCenter 4.2s ease-in-out infinite 0.8s; }
 
 /* Float animations — each slightly different */
 @keyframes floatTag1 {
@@ -365,9 +366,15 @@
 
 /* Insurance center tag needs different float since it uses translateX too */
 .tagInsurance {
+  top: 160px;
+  left: -100px;
+  animation: floatTag1 3s ease-in-out infinite, featuredPulse 2s ease-in-out infinite;
+}
+
+.tagWeb {
   top: -18px;
   left: 50%;
-  animation: floatTagCenter 3s ease-in-out infinite, featuredPulse 2s ease-in-out infinite;
+  animation: floatTagCenter 4.2s ease-in-out infinite 0.8s;
 }
 
 @keyframes floatTagCenter {

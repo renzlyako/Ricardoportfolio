@@ -1,5 +1,8 @@
+import { useState } from 'react'
+import { X } from 'lucide-react'
 import cert1 from '../assets/image4.jpg'
 import cert2 from '../assets/image5.jpg'
+import cert3 from '../assets/image6.jpg'
 import { useInView } from '../hooks/useInView.js'
 import styles from './Credentials.module.css'
 
@@ -15,12 +18,14 @@ const tools = [
 ]
 
 const certs = [
-  { img: cert1, label: 'Certified Real Estate VA'  },
-  { img: cert2, label: 'Virtual Assistant Pro'     },
+  { img: cert1, label: 'Certified Real Estate VA', position: 'center top'  },
+  { img: cert2, label: 'Virtual Assistant Pro',    position: 'center 15%' },
+  { img: cert3, label: 'Insurance Commission',     position: 'center 10%' },
 ]
 
 export default function Credentials() {
   const [ref, visible] = useInView()
+  const [lightbox, setLightbox] = useState(null)
 
   return (
     <section id="credentials" ref={ref} className={styles.section}>
@@ -66,10 +71,11 @@ export default function Credentials() {
         </div>
 
         <div className={styles.certsGrid}>
-          {certs.map(({ img, label }, i) => (
+          {certs.map(({ img, label, position }, i) => (
             <div
               key={label}
               className={styles.certCard}
+              onClick={() => setLightbox({ img, label })}
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? 'none' : 'translateY(30px)',
@@ -78,8 +84,17 @@ export default function Credentials() {
               }}
             >
               <div className={styles.certImgWrap}>
-                <img src={img} alt={label} className={styles.certImg} />
+                <img
+                  src={img}
+                  alt={label}
+                  className={styles.certImg}
+                  style={{ objectPosition: position }}
+                />
                 <div className={styles.certOverlay}>
+                  <div className={styles.certOverlayContent}>
+                    <i className="ti ti-zoom-in" aria-hidden="true" style={{ fontSize: 28, color: '#fff' }} />
+                    <span className={styles.certViewText}>View Full Image</span>
+                  </div>
                   <span className={styles.certBadge}>Certified</span>
                 </div>
               </div>
@@ -92,6 +107,30 @@ export default function Credentials() {
         </div>
 
       </div>
+
+      {/* ── Lightbox ── */}
+      {lightbox && (
+        <div className={styles.lightboxOverlay} onClick={() => setLightbox(null)}>
+          <div className={styles.lightboxInner} onClick={(e) => e.stopPropagation()}>
+            <button
+              className={styles.lightboxClose}
+              onClick={() => setLightbox(null)}
+              aria-label="Close"
+            >
+              <X size={20} />
+            </button>
+            <img
+              src={lightbox.img}
+              alt={lightbox.label}
+              className={styles.lightboxImg}
+            />
+            <div className={styles.lightboxFooter}>
+              <i className="ti ti-award" aria-hidden="true" style={{ fontSize: 16, color: '#e94f37' }} />
+              <span className={styles.lightboxLabel}>{lightbox.label}</span>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

@@ -80,7 +80,7 @@ export default function Hero() {
             {/* Insurance — HIGHLIGHTED (top left) */}
             <div className={`${styles.serviceTag} ${styles.tagInsurance} ${styles.tagFeatured}`}>
               <Shield size={13} />
-              <span>Insurance</span>
+              <span>INSURANCE</span>
               <span className={styles.starBadge}>★ Specialty</span>
             </div>
 
