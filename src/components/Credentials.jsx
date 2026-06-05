@@ -18,9 +18,9 @@ const tools = [
 ]
 
 const certs = [
-  { img: cert1, label: 'Certified Real Estate VA', position: 'center top'  },
-  { img: cert2, label: 'Virtual Assistant Pro',    position: 'center 15%' },
-  { img: cert3, label: 'Insurance Commission',     position: 'center 10%' },
+  { img: cert1, label: 'Verified License', position: 'center top'  },
+  { img: cert2, label: 'Verified Credential',    position: 'center 15%' },
+  { img: cert3, label: 'Active Agent Status',     position: 'center 10%' },
 ]
 
 export default function Credentials() {
